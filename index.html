@@ -1,599 +1,1085 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>HiYa Education Support and Finance</title>
+<title>HiYa Education Support and Finance</title>
 
-  <meta name="description"
-    content="HiYa Education Support and Finance - Student Visa Financial Documentation & Study Abroad Support.">
+<meta name="description" content="HiYa Education Support and Finance - Student Visa Financial Documentation & Study Abroad Support.">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f7faff;
+    color:#14213d;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    padding:16px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(20,50,100,.08);
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-area img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+    border-radius:14px;
+}
+
+.logo-text{
+    font-size:18px;
+    font-weight:800;
+    color:#123b7a;
+}
+
+.logo-text span{
+    display:block;
+    font-size:11px;
+    font-weight:500;
+    color:#71809a;
+    margin-top:2px;
+}
+
+.nav-contact{
+    text-decoration:none;
+    color:white;
+    background:#1264d8;
+    padding:12px 23px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:700;
+    box-shadow:0 8px 22px rgba(18,100,216,.25);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:760px;
+    padding:150px 7% 90px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 85% 15%,rgba(38,129,255,.18),transparent 30%),
+        radial-gradient(circle at 10% 80%,rgba(0,202,170,.12),transparent 30%),
+        linear-gradient(135deg,#f1f7ff,#ffffff);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    border:1px solid rgba(32,112,220,.08);
+    right:-200px;
+    bottom:-200px;
+}
+
+.hero-content{
+    max-width:680px;
+    position:relative;
+    z-index:2;
+}
+
+.tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 17px;
+    border-radius:30px;
+
+    background:#e8f2ff;
+    color:#1264d8;
+
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.tag::before{
+    content:"";
+    width:7px;
+    height:7px;
+    background:#19c779;
+    border-radius:50%;
+    box-shadow:0 0 0 5px rgba(25,199,121,.12);
+}
+
+.hero h1{
+    font-size:clamp(43px,6vw,76px);
+    line-height:1.02;
+    letter-spacing:-2px;
+    color:#0d2853;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#1264d8,#13a7d8);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero-description{
+    max-width:610px;
+    margin:25px 0 32px;
+    font-size:18px;
+    line-height:1.8;
+    color:#66738a;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.main-btn{
+    text-decoration:none;
+    padding:18px 27px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:800;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    transition:.25s;
+}
+
+.main-btn:hover{
+    transform:translateY(-4px);
+}
+
+.facebook{
+    background:#1877f2;
+    color:white;
+    box-shadow:0 13px 30px rgba(24,119,242,.25);
+}
+
+.whatsapp{
+    background:#20c767;
+    color:white;
+    box-shadow:0 13px 30px rgba(32,199,103,.25);
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    display:flex;
+    gap:35px;
+    margin-top:45px;
+    flex-wrap:wrap;
+}
+
+.stat{
+    position:relative;
+    padding-right:35px;
+}
+
+.stat:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    right:0;
+    top:5px;
+    width:1px;
+    height:50px;
+    background:#dbe4f1;
+}
+
+.stat-number{
+    font-size:29px;
+    font-weight:900;
+    color:#102f60;
+}
+
+.stat-label{
+    font-size:12px;
+    color:#7b879a;
+    margin-top:2px;
+}
+
+/* ================= HERO CARD ================= */
+
+.hero-visual{
+    width:410px;
+    min-width:350px;
+    position:relative;
+}
+
+.glass-card{
+    position:relative;
+    background:rgba(255,255,255,.72);
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.9);
+    border-radius:35px;
+
+    padding:42px 32px;
+
+    box-shadow:
+        0 35px 90px rgba(25,68,130,.16),
+        inset 0 1px 0 white;
+
+    text-align:center;
+}
+
+.card-logo{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+    margin-bottom:18px;
+    filter:drop-shadow(0 15px 20px rgba(20,70,140,.15));
+}
+
+.glass-card h2{
+    color:#123b7a;
+    font-size:26px;
+}
+
+.glass-card>p{
+    color:#77849a;
+    font-size:14px;
+    margin:8px 0 25px;
+}
+
+.card-list{
+    display:grid;
+    gap:10px;
+    text-align:left;
+}
+
+.card-item{
+    background:rgba(245,249,255,.85);
+    border:1px solid #edf2f8;
+    padding:13px 15px;
+    border-radius:13px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    font-size:13px;
+    font-weight:700;
+    color:#30496d;
+}
+
+/* FLOATING CARD */
+
+.float-card{
+    position:absolute;
+    right:-35px;
+    bottom:35px;
+
+    background:white;
+    border-radius:18px;
+    padding:16px 19px;
+
+    box-shadow:0 20px 45px rgba(25,60,110,.16);
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.float-icon{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    background:#e9fff4;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+}
+
+.float-card strong{
+    display:block;
+    color:#163d70;
+    font-size:15px;
+}
+
+.float-card small{
+    color:#8490a2;
+    font-size:11px;
+}
+
+/* ================= TRUST BAR ================= */
+
+.trust{
+    background:#102f60;
+    color:white;
+
+    padding:24px 7%;
+
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.trust-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.trust-item span{
+    color:#60dba3;
+    font-size:20px;
+}
+
+/* ================= SERVICES ================= */
+
+.section{
+    padding:100px 7%;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 55px;
+}
+
+.section-heading .small{
+    color:#1264d8;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.section-heading h2{
+    font-size:42px;
+    margin:10px 0;
+    color:#102d58;
+}
+
+.section-heading p{
+    color:#758196;
+}
+
+.services{
+    max-width:1150px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.service{
+    background:white;
+    border:1px solid #e8eef6;
+    border-radius:23px;
+    padding:32px;
+
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 55px rgba(22,67,125,.11);
+}
+
+.service-icon{
+    width:58px;
+    height:58px;
+    border-radius:17px;
+    background:#eaf3ff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:25px;
+    margin-bottom:22px;
+}
+
+.service h3{
+    font-size:19px;
+    margin-bottom:9px;
+    color:#163a6c;
+}
+
+.service p{
+    color:#758196;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* ================= COUNTRIES ================= */
+
+.country-section{
+    background:#f0f6ff;
+    padding:85px 7%;
+    text-align:center;
+}
+
+.country-section h2{
+    font-size:38px;
+    color:#102d58;
+    margin-bottom:10px;
+}
+
+.country-section p{
+    color:#758196;
+    margin-bottom:35px;
+}
+
+.countries{
+    max-width:950px;
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.country{
+    background:white;
+    border:1px solid #e1eaf5;
+    padding:12px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    color:#31547e;
+
+    box-shadow:0 5px 15px rgba(20,60,110,.04);
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    margin:0;
+    padding:95px 7%;
+
+    text-align:center;
+    color:white;
+
+    background:
+        radial-gradient(circle at 20% 30%,rgba(48,150,255,.3),transparent 30%),
+        radial-gradient(circle at 80% 70%,rgba(0,220,170,.2),transparent 30%),
+        #0c2851;
+}
+
+.cta h2{
+    font-size:43px;
+    margin-bottom:12px;
+}
+
+.cta p{
+    max-width:650px;
+    margin:0 auto 35px;
+    color:#c9d6e8;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.cta .main-btn{
+    min-width:245px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#071a35;
+    color:#93a4bd;
+    text-align:center;
+    padding:30px 15px;
+    font-size:13px;
+}
+
+footer strong{
+    color:white;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:130px;
     }
 
-    html {
-      scroll-behavior: smooth;
+    .hero-content{
+        max-width:720px;
     }
 
-    body {
-      background: #f5f8fc;
-      color: #172033;
-      line-height: 1.6;
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
     }
 
-    /* NAVBAR */
-    nav {
-      width: 100%;
-      background: rgba(255,255,255,0.97);
-      padding: 14px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 18px rgba(0,0,0,0.07);
+    .hero-buttons,
+    .stats{
+        justify-content:center;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      font-weight: 800;
-      font-size: 18px;
-      color: #123b7a;
+    .hero-visual{
+        width:100%;
+        max-width:420px;
+        min-width:0;
     }
 
-    .brand img {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      object-fit: cover;
+    .services{
+        grid-template-columns:1fr;
+        max-width:550px;
     }
 
-    .nav-btn {
-      text-decoration: none;
-      background: #123b7a;
-      color: white;
-      padding: 10px 19px;
-      border-radius: 25px;
-      font-size: 14px;
-      font-weight: bold;
+    .float-card{
+        right:-10px;
+    }
+}
+
+@media(max-width:550px){
+
+    .navbar{
+        padding:12px 4%;
     }
 
-    /* HERO */
-    .hero {
-      min-height: 650px;
-      padding: 80px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-
-      background:
-        radial-gradient(circle at top right,
-        rgba(43,108,176,0.18), transparent 35%),
-        linear-gradient(135deg, #eef5ff, #ffffff);
+    .logo-area img{
+        width:40px;
+        height:40px;
     }
 
-    .hero-text {
-      max-width: 650px;
+    .logo-text{
+        font-size:14px;
     }
 
-    .badge {
-      display: inline-block;
-      background: #e3efff;
-      color: #1755a5;
-      padding: 8px 16px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 20px;
+    .logo-text span{
+        font-size:9px;
     }
 
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 70px);
-      line-height: 1.08;
-      margin-bottom: 22px;
-      color: #102a56;
+    .nav-contact{
+        padding:9px 14px;
+        font-size:12px;
     }
 
-    .hero h1 span {
-      color: #1677d2;
+    .hero{
+        padding:115px 5% 65px;
     }
 
-    .hero p {
-      font-size: 18px;
-      color: #596579;
-      max-width: 590px;
-      margin-bottom: 32px;
+    .hero h1{
+        font-size:45px;
+        letter-spacing:-1.5px;
     }
 
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+    .hero-description{
+        font-size:16px;
     }
 
-    .big-btn {
-      text-decoration: none;
-      padding: 18px 28px;
-      border-radius: 14px;
-      font-weight: bold;
-      font-size: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      transition: 0.25s;
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
     }
 
-    .big-btn:hover {
-      transform: translateY(-3px);
+    .main-btn{
+        width:100%;
     }
 
-    .facebook {
-      background: #1877f2;
-      color: white;
-      box-shadow: 0 10px 25px rgba(24,119,242,0.25);
+    .stats{
+        gap:20px;
     }
 
-    .whatsapp {
-      background: #20c767;
-      color: white;
-      box-shadow: 0 10px 25px rgba(32,199,103,0.25);
+    .stat{
+        padding-right:20px;
     }
 
-    /* HERO CARD */
-    .hero-card {
-      width: 390px;
-      max-width: 100%;
-      background: white;
-      padding: 35px;
-      border-radius: 28px;
-      box-shadow: 0 25px 70px rgba(21,55,100,0.13);
-      border: 1px solid #edf1f7;
+    .stat-number{
+        font-size:24px;
     }
 
-    .hero-card-logo {
-      width: 90px;
-      height: 90px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 20px;
+    .glass-card{
+        padding:30px 20px;
     }
 
-    .hero-card h2 {
-      text-align: center;
-      color: #123b7a;
-      margin-bottom: 8px;
+    .float-card{
+        position:relative;
+        right:auto;
+        bottom:auto;
+        margin:15px auto 0;
+        width:max-content;
+        max-width:100%;
     }
 
-    .hero-card p {
-      text-align: center;
-      font-size: 14px;
-      color: #687386;
-      margin-bottom: 25px;
+    .section{
+        padding:70px 5%;
     }
 
-    .mini-item {
-      background: #f6f9fd;
-      padding: 13px;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      font-size: 14px;
-      font-weight: 600;
+    .section-heading h2,
+    .country-section h2{
+        font-size:32px;
     }
 
-    /* SERVICES */
-    .section {
-      padding: 85px 7%;
+    .cta{
+        padding:70px 5%;
     }
 
-    .section-title {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 45px;
+    .cta h2{
+        font-size:32px;
     }
 
-    .section-title small {
-      color: #1677d2;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .cta-buttons{
+        flex-direction:column;
     }
 
-    .section-title h2 {
-      font-size: 38px;
-      margin: 8px 0 12px;
-      color: #12284b;
+    .cta .main-btn{
+        width:100%;
     }
+}
 
-    .section-title p {
-      color: #697386;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .service {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      border: 1px solid #e9eef5;
-      transition: 0.25s;
-    }
-
-    .service:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(21,55,100,0.10);
-    }
-
-    .service-icon {
-      width: 55px;
-      height: 55px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px;
-      background: #eaf3ff;
-      font-size: 25px;
-      margin-bottom: 20px;
-    }
-
-    .service h3 {
-      margin-bottom: 9px;
-      color: #183765;
-    }
-
-    .service p {
-      font-size: 14px;
-      color: #697386;
-    }
-
-    /* CONTACT */
-    .contact {
-      padding: 80px 7%;
-      background: #102e5b;
-      color: white;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .contact p {
-      color: #cbd7e8;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .contact .big-btn {
-      min-width: 240px;
-      font-size: 17px;
-      padding: 19px 28px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #0a1e3b;
-      color: #aebbd0;
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 13px;
-    }
-
-    footer strong {
-      color: white;
-    }
-
-    /* MOBILE */
-    @media (max-width: 850px) {
-
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 60px;
-      }
-
-      .hero p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .services {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        width: 100%;
-        max-width: 420px;
-      }
-    }
-
-    @media (max-width: 520px) {
-
-      nav {
-        padding: 12px 4%;
-      }
-
-      .brand {
-        font-size: 14px;
-      }
-
-      .brand img {
-        width: 36px;
-        height: 36px;
-      }
-
-      .nav-btn {
-        padding: 8px 13px;
-        font-size: 12px;
-      }
-
-      .hero {
-        padding: 55px 5% 60px;
-      }
-
-      .hero h1 {
-        font-size: 43px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .hero-buttons {
-        width: 100%;
-      }
-
-      .big-btn {
-        width: 100%;
-      }
-
-      .contact h2 {
-        font-size: 30px;
-      }
-
-      .contact .big-btn {
-        width: 100%;
-      }
-    }
-  </style>
+</style>
 </head>
 
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
 
-    <div class="brand">
-      <img src="logo.png" alt="HiYa Logo">
-      <span>HiYa Education</span>
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo-area">
+
+        <img src="logo.png" alt="HiYa Logo">
+
+        <div class="logo-text">
+            HiYa Education
+            <span>Support & Finance</span>
+        </div>
+
     </div>
 
-    <a class="nav-btn" href="#contact">
-      Contact
+    <a href="#contact" class="nav-contact">
+        Contact Us
     </a>
 
-  </nav>
+</header>
 
 
-  <!-- HERO -->
-  <section class="hero">
 
-    <div class="hero-text">
+<!-- ================= HERO ================= -->
 
-      <div class="badge">
-        ✦ Study Abroad Support
-      </div>
+<section class="hero">
 
-      <h1>
-        Your Journey.<br>
-        <span>Our Support.</span>
-      </h1>
+    <div class="hero-content">
 
-      <p>
-        Student Visa Financial Documentation & Study Abroad Support.
-        Get professional assistance with your financial documentation
-        and study-abroad preparation.
-      </p>
+        <div class="tag">
+            Student Visa & Study Abroad Support
+        </div>
 
-      <div class="hero-buttons">
+        <h1>
+            Your Journey.<br>
+            <span>Our Support.</span>
+        </h1>
 
-        <!-- FACEBOOK PAGE -->
-        <a
-          class="big-btn facebook"
-          href="https://www.facebook.com/hiyaedu21"
-          target="_blank">
-          f &nbsp; Facebook Page
-        </a>
+        <p class="hero-description">
+            Professional support for student visa financial
+            documentation and study-abroad preparation.
+            Build your journey with organized and reliable support.
+        </p>
 
-        <!-- WHATSAPP -->
-        <a
-          class="big-btn whatsapp"
-          href="https://wa.me/8801998879371"
-          target="_blank">
-          ☎ &nbsp; WhatsApp Contact
-        </a>
 
-      </div>
+        <div class="hero-buttons">
+
+            <a
+                href="https://www.facebook.com/hiyaedu21"
+                target="_blank"
+                class="main-btn facebook">
+
+                <span>f</span>
+                Visit Facebook Page
+
+            </a>
+
+
+            <a
+                href="https://wa.me/8801998879371"
+                target="_blank"
+                class="main-btn whatsapp">
+
+                <span>☏</span>
+                WhatsApp Contact
+
+            </a>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    4,000+
+                </div>
+
+                <div class="stat-label">
+                    Successful Students
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    15+
+                </div>
+
+                <div class="stat-label">
+                    Countries
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    24/7
+                </div>
+
+                <div class="stat-label">
+                    Support
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
 
-    <!-- RIGHT CARD -->
-    <div class="hero-card">
 
-      <img
-        src="logo.png"
-        alt="HiYa Education Logo"
-        class="hero-card-logo">
+    <!-- HERO CARD -->
 
-      <h2>HiYa Education</h2>
+    <div class="hero-visual">
 
-      <p>
-        Education Support & Financial Documentation
-      </p>
+        <div class="glass-card">
 
-      <div class="mini-item">
-        🎓 Student Visa Support
-      </div>
+            <img
+                src="logo.png"
+                class="card-logo"
+                alt="HiYa Logo">
 
-      <div class="mini-item">
-        📄 Financial Documentation
-      </div>
+            <h2>
+                HiYa Education
+            </h2>
 
-      <div class="mini-item">
-        🏦 FDR & Bank Statement Support
-      </div>
+            <p>
+                Student Visa Financial Documentation
+                & Study Abroad Support
+            </p>
 
-      <div class="mini-item">
-        ✈️ Study Abroad Guidance
-      </div>
+
+            <div class="card-list">
+
+                <div class="card-item">
+                    🎓 &nbsp; Student Visa Support
+                </div>
+
+                <div class="card-item">
+                    📄 &nbsp; Financial Documentation
+                </div>
+
+                <div class="card-item">
+                    🏦 &nbsp; FDR & Bank Statement Support
+                </div>
+
+                <div class="card-item">
+                    🌍 &nbsp; Study Abroad Guidance
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="float-card">
+
+            <div class="float-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    4,000+ Students
+                </strong>
+
+                <small>
+                    Supported on their journey
+                </small>
+
+            </div>
+
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- SERVICES -->
-  <section class="section">
 
-    <div class="section-title">
+<!-- ================= TRUST BAR ================= -->
 
-      <small>What We Provide</small>
+<section class="trust">
 
-      <h2>Professional Support</h2>
+    <div class="trust-item">
+        <span>✓</span>
+        Professional Support
+    </div>
 
-      <p>
-        Helping students prepare for their study-abroad journey
-        with organized documentation support.
-      </p>
+    <div class="trust-item">
+        <span>✓</span>
+        Documentation Guidance
+    </div>
+
+    <div class="trust-item">
+        <span>✓</span>
+        Study Abroad Support
+    </div>
+
+</section>
+
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div class="small">
+            Our Services
+        </div>
+
+        <h2>
+            Everything You Need
+        </h2>
+
+        <p>
+            Practical support for students preparing
+            for their international education journey.
+        </p>
 
     </div>
 
 
     <div class="services">
 
-      <div class="service">
 
-        <div class="service-icon">🎓</div>
+        <div class="service">
 
-        <h3>Student Visa Support</h3>
+            <div class="service-icon">
+                🎓
+            </div>
 
-        <p>
-          Guidance and support for students preparing their
-          financial documentation for student visa applications.
-        </p>
+            <h3>
+                Student Visa Support
+            </h3>
 
-      </div>
+            <p>
+                Guidance and support for preparing
+                financial documentation required
+                during the student visa process.
+            </p>
 
-
-      <div class="service">
-
-        <div class="service-icon">📄</div>
-
-        <h3>Financial Documentation</h3>
-
-        <p>
-          Support with organizing required financial documents,
-          statements and supporting paperwork.
-        </p>
-
-      </div>
+        </div>
 
 
-      <div class="service">
+        <div class="service">
 
-        <div class="service-icon">🌍</div>
+            <div class="service-icon">
+                📑
+            </div>
 
-        <h3>Study Abroad Support</h3>
+            <h3>
+                Financial Documentation
+            </h3>
 
-        <p>
-          Assistance for students planning their international
-          education journey.
-        </p>
+            <p>
+                Support with organizing financial
+                documents, statements and related
+                supporting paperwork.
+            </p>
 
-      </div>
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                🌍
+            </div>
+
+            <h3>
+                Study Abroad Support
+            </h3>
+
+            <p>
+                Support for students planning their
+                education journey and preparing for
+                international study.
+            </p>
+
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
+
+<!-- ================= COUNTRIES ================= -->
+
+<section class="country-section">
 
     <h2>
-      Let's Talk About Your Future
+        15+ Countries
     </h2>
 
     <p>
-      Have questions about student visa financial documentation
-      or study abroad support? Contact HiYa Education Support and Finance.
+        Supporting students interested in studying abroad.
     </p>
 
-    <div class="contact-buttons">
 
-      <!-- FACEBOOK -->
-      <a
-        class="big-btn facebook"
-        href="https://www.facebook.com/hiyaedu21"
-        target="_blank">
-        f &nbsp; Visit Facebook Page
-      </a>
+    <div class="countries">
 
-      <!-- WHATSAPP -->
-      <a
-        class="big-btn whatsapp"
-        href="https://wa.me/8801998879371"
-        target="_blank">
-        ☎ &nbsp; Chat on WhatsApp
-      </a>
+        <div class="country">🇮🇹 Italy</div>
+        <div class="country">🇷🇴 Romania</div>
+        <div class="country">🇭🇺 Hungary</div>
+        <div class="country">🇲🇹 Malta</div>
+        <div class="country">🇨🇾 Cyprus</div>
+        <div class="country">🇦🇺 Australia</div>
+        <div class="country">🇨🇦 Canada</div>
+        <div class="country">🇬🇧 UK</div>
+        <div class="country">🇩🇪 Germany</div>
+        <div class="country">🇫🇷 France</div>
+        <div class="country">🇵🇱 Poland</div>
+        <div class="country">🇵🇹 Portugal</div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- FOOTER -->
-  <footer>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta" id="contact">
+
+    <h2>
+        Ready to Start?
+    </h2>
 
     <p>
-      © 2026 <strong>HiYa Education Support and Finance</strong>
+        Connect with HiYa Education Support and Finance
+        and discuss your study-abroad documentation needs.
+    </p>
+
+
+    <div class="cta-buttons">
+
+        <a
+            href="https://www.facebook.com/hiyaedu21"
+            target="_blank"
+            class="main-btn facebook">
+
+            f &nbsp; Visit Facebook Page
+
+        </a>
+
+
+        <a
+            href="https://wa.me/8801998879371"
+            target="_blank"
+            class="main-btn whatsapp">
+
+            ☏ &nbsp; Chat on WhatsApp
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026
+        <strong>
+            HiYa Education Support and Finance
+        </strong>
     </p>
 
     <p>
-      Student Visa Financial Documentation & Study Abroad Support.
+        Student Visa Financial Documentation & Study Abroad Support.
     </p>
 
-  </footer>
+</footer>
+
 
 </body>
 </html>
