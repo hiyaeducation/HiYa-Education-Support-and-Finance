@@ -3,542 +3,1294 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>HiYa Education Support and Finance</title>
-<meta name="description" content="HiYa Education Support and Finance - Student Visa Support, Bank Statement, FDR & Fund Documentation and Study Abroad Guidance.">
+
+<meta name="description" content="HiYa Education Support and Finance - Student Visa, Bank Statement, FDR, Fund Documentation and Study Abroad Support.">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;color:#123b5d;background:#fff;line-height:1.6}
-a{text-decoration:none;color:inherit}
-.container{width:90%;max-width:1200px;margin:auto}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 15px rgba(0,0,0,.08)}
-.navbar{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo-area{display:flex;align-items:center;gap:10px}
-.logo-area img{width:58px;height:58px;object-fit:contain}
-.logo-text h2{font-size:20px;color:#07548a;line-height:1.1}
-.logo-text p{font-size:10px;color:#555;margin-top:3px}
+html{
+    scroll-behavior:smooth;
+}
 
-nav{display:flex;align-items:center;gap:28px}
-nav a{font-size:14px;font-weight:600;color:#163d59}
-nav a:hover{color:#008fd5}
-.nav-btn{background:#f4b82b;color:#123b5d;padding:12px 20px;border-radius:8px;font-weight:bold}
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f8fc;
+    color:#172033;
+    line-height:1.6;
+}
 
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#ffffff;
+    box-shadow:0 3px 18px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-area img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.logo-text{
+    font-size:20px;
+    font-weight:800;
+    color:#0757a0;
+}
+
+.logo-text span{
+    display:block;
+    font-size:12px;
+    color:#777;
+    font-weight:500;
+}
+
+.nav-links{
+    display:flex;
+    gap:24px;
+    align-items:center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#26364d;
+    font-weight:600;
+    font-size:15px;
+}
+
+.nav-links a:hover{
+    color:#0878d1;
+}
+
+.nav-btn{
+    background:#0878d1;
+    color:white !important;
+    padding:10px 18px;
+    border-radius:25px;
+}
+
+/* HERO */
 .hero{
-min-height:620px;
-display:flex;
-align-items:center;
-background:
-linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.82),rgba(255,255,255,.25)),
-url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=85");
-background-size:cover;
-background-position:center
+    min-height:650px;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(120deg,#063b78,#087bd1 55%,#00a5df);
+    display:flex;
+    align-items:center;
 }
 
-.hero-content{max-width:700px;padding:70px 0}
-.small-title{color:#c49a28;font-weight:bold;letter-spacing:2px;font-size:13px;margin-bottom:14px}
-.hero h1{font-size:52px;line-height:1.08;color:#073b63;margin-bottom:20px}
-.hero p{font-size:17px;color:#40566a;max-width:680px;margin-bottom:28px}
+.hero:before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    right:-180px;
+    top:-150px;
+}
 
-.buttons{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:14px 25px;border-radius:8px;font-weight:bold;transition:.2s}
-.btn-blue{background:#008ed3;color:#fff}
-.btn-gold{background:#f4b82b;color:#123b5d}
-.btn:hover{transform:translateY(-2px)}
+.hero:after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+    left:-100px;
+    bottom:-120px;
+}
 
-.stats{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
-.stat{background:#fff;padding:14px 20px;min-width:105px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,.1)}
-.stat h3{color:#0075ae;font-size:22px}
-.stat p{font-size:10px;margin:0;color:#263e50}
+.hero-container{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    padding:70px 20px;
+    position:relative;
+    z-index:5;
+}
 
-section{padding:75px 0}
-.section-title{text-align:center;max-width:750px;margin:0 auto 45px}
-.section-title .small-title{margin-bottom:8px}
-.section-title h2{font-size:34px;color:#073b63;margin-bottom:10px}
-.section-title p{color:#71808d}
+.hero-content{
+    max-width:700px;
+    color:white;
+}
 
-.trust{background:#074c82;color:#fff}
-.trust .small-title{color:#e5bd48}
-.trust .section-title h2{color:#fff}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.trust-card{background:#fff;color:#123b5d;padding:30px 15px;text-align:center;border-radius:12px;font-weight:bold}
-.trust-icon{font-size:25px;margin-bottom:8px}
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25);
+    padding:8px 17px;
+    border-radius:30px;
+    margin-bottom:20px;
+    font-size:14px;
+    font-weight:600;
+}
 
-.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.service-card{border:1px solid #edf1f4;border-radius:14px;padding:25px 20px;background:#fff;box-shadow:0 5px 18px rgba(0,0,0,.05);transition:.25s}
-.service-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.1)}
-.service-icon{width:45px;height:45px;border-radius:50%;background:#eaf7fd;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px}
-.service-card h3{font-size:17px;margin-bottom:10px;color:#123b5d}
-.service-card p{font-size:13px;color:#71808d;min-height:80px}
-.learn{color:#008dca;font-size:13px;font-weight:bold}
+.hero h1{
+    font-size:52px;
+    line-height:1.12;
+    margin-bottom:22px;
+}
 
-.process{background:#f7fafc}
-.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.process-card{background:#fff;padding:30px;text-align:center;border-radius:14px;box-shadow:0 5px 20px rgba(0,0,0,.05)}
-.number{width:50px;height:50px;margin:0 auto 15px;border-radius:50%;background:#008ed3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:bold}
-.process-card h3{margin-bottom:8px}
-.process-card p{color:#71808d;font-size:14px}
+.hero h1 span{
+    color:#ffd75a;
+}
 
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.about-box h2{color:#073b63;font-size:35px;margin-bottom:15px}
-.about-box p{color:#667785;margin-bottom:15px}
-.check{margin:10px 0;font-weight:600}
+.hero p{
+    font-size:19px;
+    color:#eaf6ff;
+    max-width:650px;
+    margin-bottom:30px;
+}
 
-.cta{background:#073f6d;color:#fff;text-align:center}
-.cta h2{font-size:35px;margin-bottom:12px}
-.cta p{max-width:650px;margin:0 auto 25px;color:#dce9f2}
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-.contact{background:#f8fafc}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.contact-card{background:#fff;padding:35px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.05)}
-.contact-card h3{color:#073b63;margin-bottom:20px;font-size:23px}
-.contact-item{margin:15px 0;color:#526575}
-.contact-item strong{color:#123b5d}
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.25s;
+}
 
-footer{background:#062e4f;color:#fff;padding:40px 0 20px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
-footer h3{margin-bottom:12px}
-footer p{color:#c5d4df;font-size:14px}
-footer a{display:block;color:#c5d4df;margin:8px 0;font-size:14px}
-.copyright{text-align:center;border-top:1px solid rgba(255,255,255,.15);margin-top:30px;padding-top:20px;color:#aebfcc;font-size:12px}
+.btn-primary{
+    background:#ffd34d;
+    color:#173250;
+}
 
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-white{
+    background:white;
+    color:#0757a0;
+}
+
+.btn-white:hover{
+    transform:translateY(-2px);
+}
+
+/* PLANE */
+.plane-area{
+    position:absolute;
+    right:5%;
+    top:22%;
+    width:430px;
+    height:300px;
+    z-index:2;
+}
+
+.plane{
+    position:absolute;
+    width:300px;
+    height:70px;
+    right:20px;
+    top:80px;
+    transform:rotate(-8deg);
+}
+
+.plane-body{
+    position:absolute;
+    width:250px;
+    height:38px;
+    background:white;
+    border-radius:50% 60% 45% 45%;
+    left:30px;
+    top:17px;
+}
+
+.plane-nose{
+    position:absolute;
+    right:-15px;
+    top:18px;
+    width:35px;
+    height:35px;
+    background:white;
+    border-radius:50%;
+}
+
+.wing-top{
+    position:absolute;
+    width:110px;
+    height:22px;
+    background:#eaf5ff;
+    transform:skewX(-35deg);
+    left:105px;
+    top:0;
+    border-radius:8px;
+}
+
+.wing-bottom{
+    position:absolute;
+    width:120px;
+    height:24px;
+    background:#d9edff;
+    transform:skewX(35deg);
+    left:105px;
+    top:47px;
+    border-radius:8px;
+}
+
+.tail{
+    position:absolute;
+    width:65px;
+    height:60px;
+    background:#ffffff;
+    left:28px;
+    top:-2px;
+    clip-path:polygon(55% 100%,0 0,100% 20%);
+}
+
+.window{
+    position:absolute;
+    width:16px;
+    height:10px;
+    border-radius:50%;
+    background:#0878d1;
+    top:29px;
+}
+
+.window:nth-child(1){left:75px;}
+.window:nth-child(2){left:100px;}
+.window:nth-child(3){left:125px;}
+.window:nth-child(4){left:150px;}
+.window:nth-child(5){left:175px;}
+
+.cloud{
+    position:absolute;
+    background:rgba(255,255,255,.18);
+    border-radius:50px;
+}
+
+.cloud1{
+    width:150px;
+    height:35px;
+    top:40px;
+    left:20px;
+}
+
+.cloud2{
+    width:180px;
+    height:40px;
+    bottom:30px;
+    right:0;
+}
+
+.cloud3{
+    width:120px;
+    height:30px;
+    top:180px;
+    left:80px;
+}
+
+/* STATS */
+.stats{
+    background:white;
+    max-width:1050px;
+    margin:-55px auto 0;
+    position:relative;
+    z-index:20;
+    border-radius:20px;
+    box-shadow:0 10px 35px rgba(0,0,0,.10);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    overflow:hidden;
+}
+
+.stat{
+    text-align:center;
+    padding:28px 15px;
+    border-right:1px solid #eee;
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat h2{
+    color:#0878d1;
+    font-size:32px;
+}
+
+.stat p{
+    color:#68778b;
+    font-weight:600;
+}
+
+/* GENERAL */
+section{
+    padding:85px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    color:#12345a;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#69788d;
+    max-width:650px;
+    margin:auto;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.service{
+    background:white;
+    padding:30px 22px;
+    border-radius:18px;
+    box-shadow:0 7px 25px rgba(0,0,0,.06);
+    border:1px solid #edf1f6;
+    transition:.25s;
+}
+
+.service:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.10);
+}
+
+.icon{
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#e8f5ff;
+    border-radius:15px;
+    font-size:27px;
+    margin-bottom:18px;
+}
+
+.service h3{
+    color:#163c65;
+    margin-bottom:9px;
+}
+
+.service p{
+    color:#718096;
+    font-size:14px;
+}
+
+/* ABOUT */
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:55px;
+    align-items:center;
+}
+
+.about-box{
+    background:#f4f9ff;
+    padding:35px;
+    border-radius:25px;
+    border-left:6px solid #0878d1;
+}
+
+.about-box h3{
+    font-size:28px;
+    color:#123d67;
+    margin-bottom:15px;
+}
+
+.about-box p{
+    color:#66778b;
+}
+
+.check-list{
+    list-style:none;
+    margin-top:25px;
+}
+
+.check-list li{
+    margin-bottom:14px;
+    font-weight:600;
+    color:#3d5269;
+}
+
+.check-list li:before{
+    content:"✓";
+    color:#0878d1;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+/* PROCESS */
+.process{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.process-card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 7px 25px rgba(0,0,0,.06);
+}
+
+.number{
+    width:60px;
+    height:60px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:#0878d1;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.process-card h3{
+    color:#173b60;
+    margin-bottom:10px;
+}
+
+.process-card p{
+    color:#718096;
+    font-size:14px;
+}
+
+/* COUNTRIES */
+.countries{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+}
+
+.country{
+    background:white;
+    padding:13px 22px;
+    border-radius:30px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+    font-weight:700;
+    color:#27567e;
+}
+
+/* CTA */
+.cta{
+    background:linear-gradient(120deg,#063b78,#087bd1);
+    color:white;
+    text-align:center;
+    padding:75px 20px;
+}
+
+.cta h2{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.cta p{
+    max-width:650px;
+    margin:0 auto 25px;
+    color:#e9f5ff;
+}
+
+/* CONTACT */
+.contact{
+    background:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.contact-card{
+    text-align:center;
+    background:#f6faff;
+    padding:30px 20px;
+    border-radius:18px;
+}
+
+.contact-card .big-icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.contact-card h3{
+    color:#16416b;
+    margin-bottom:5px;
+}
+
+.contact-card p,
+.contact-card a{
+    color:#65768a;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    background:#092844;
+    color:white;
+    padding:50px 20px 25px;
+}
+
+.footer-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:15px;
+}
+
+.footer-logo img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#c6d4e2;
+    font-size:14px;
+}
+
+footer a{
+    color:#d8e7f5;
+    text-decoration:none;
+    display:block;
+    margin-bottom:8px;
+}
+
+.copyright{
+    max-width:1150px;
+    margin:35px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.15);
+    text-align:center;
+    color:#aebdca;
+    font-size:13px;
+}
+
+/* FLOATING WHATSAPP */
 .whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-width:58px;
-height:58px;
-background:#00c767;
-color:#fff;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:27px;
-box-shadow:0 5px 18px rgba(0,0,0,.25);
-z-index:999
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    background:#20c66b;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    text-decoration:none;
+    box-shadow:0 7px 25px rgba(0,0,0,.25);
+    z-index:999;
 }
 
+/* MOBILE */
 @media(max-width:900px){
-nav{gap:12px}
-nav a{font-size:11px}
-.nav-btn{padding:9px 12px;font-size:11px}
-.hero h1{font-size:40px}
-.services-grid{grid-template-columns:repeat(2,1fr)}
-.trust-grid{grid-template-columns:repeat(2,1fr)}
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:720px;
+    }
+
+    .hero-content{
+        text-align:center;
+        margin:auto;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .plane-area{
+        opacity:.25;
+        right:-80px;
+        top:55%;
+        transform:scale(.8);
+    }
+
+    .stats{
+        margin:-40px 15px 0;
+    }
+
+    .services{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
 }
 
-@media(max-width:600px){
-.navbar{min-height:65px}
-.logo-area img{width:45px;height:45px}
-.logo-text h2{font-size:16px}
-.logo-text p{font-size:8px}
-nav{display:none}
-.hero{min-height:650px}
-.hero-content{padding:50px 0}
-.hero h1{font-size:37px}
-.hero p{font-size:15px}
-.stats{gap:8px}
-.stat{min-width:90px;padding:12px}
-section{padding:55px 0}
-.section-title h2{font-size:28px}
-.services-grid,.trust-grid,.process-grid,.about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
-.about-grid{gap:20px}
-.cta h2{font-size:28px}
+@media(max-width:550px){
+
+    .navbar{
+        padding:10px 14px;
+    }
+
+    .logo-area img{
+        width:45px;
+        height:45px;
+    }
+
+    .logo-text{
+        font-size:16px;
+    }
+
+    .logo-text span{
+        font-size:10px;
+    }
+
+    .hero{
+        min-height:690px;
+    }
+
+    .hero-container{
+        padding:55px 18px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-right:0;
+        border-bottom:1px solid #eee;
+        padding:20px;
+    }
+
+    .stat:last-child{
+        border-bottom:0;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:65px 18px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .cta h2{
+        font-size:30px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-<div class="container navbar">
+    <div class="navbar">
 
-<a href="#home" class="logo-area">
-<img src="logo.png" alt="HiYa Education Support and Finance Logo">
-<div class="logo-text">
-<h2>HiYa</h2>
-<p>Education support and finance</p>
-</div>
-</a>
+        <div class="logo-area">
+            <img src="logo.png" alt="HiYa Education Support and Finance">
+            <div class="logo-text">
+                HiYa Education
+                <span>Support and Finance</span>
+            </div>
+        </div>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#process">Process</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a href="#contact" class="nav-btn">Start Consultation</a>
-</nav>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a class="nav-btn" href="https://wa.me/8801998879371" target="_blank">
+                WhatsApp
+            </a>
+        </nav>
 
-</div>
+    </div>
 </header>
 
+
+<!-- HERO -->
 <section class="hero" id="home">
-<div class="container">
-<div class="hero-content">
 
-<div class="small-title">YOUR TRUSTED PARTNER</div>
+    <div class="hero-container">
 
-<h1>International Study & Financial Documentation Support</h1>
+        <div class="hero-content">
 
-<p>
-Professional support for student visa preparation, bank statement,
-FDR & fund documentation and study abroad guidance.
-</p>
+            <div class="badge">
+                🎓 Study Abroad Support
+            </div>
 
-<div class="buttons">
-<a href="#contact" class="btn btn-blue">Start Consultation →</a>
-<a href="#services" class="btn btn-gold">Explore Services</a>
-</div>
+            <h1>
+                Your Journey To A
+                <span>Better Future</span>
+                Starts Here
+            </h1>
 
+            <p>
+                HiYa Education Support and Finance provides professional
+                student visa, bank statement, FDR, fund documentation
+                and study abroad support.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">
+                    Explore Services
+                </a>
+
+                <a href="https://wa.me/8801998879371"
+                   target="_blank"
+                   class="btn btn-white">
+                    Contact Us
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CSS PLANE -->
+    <div class="plane-area">
+
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+
+        <div class="plane">
+
+            <div class="tail"></div>
+
+            <div class="wing-top"></div>
+            <div class="wing-bottom"></div>
+
+            <div class="plane-body"></div>
+            <div class="plane-nose"></div>
+
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
 <div class="stats">
 
-<div class="stat">
-<h3>4000+</h3>
-<p>Success Stories</p>
-</div>
+    <div class="stat">
+        <h2>4000+</h2>
+        <p>Success Stories</p>
+    </div>
 
-<div class="stat">
-<h3>15+</h3>
-<p>Countries</p>
-</div>
+    <div class="stat">
+        <h2>15+</h2>
+        <p>Countries</p>
+    </div>
 
-<div class="stat">
-<h3>24/7</h3>
-<p>Support</p>
-</div>
-
-</div>
-</div>
-</div>
-</section>
-
-<section class="trust">
-<div class="container">
-
-<div class="section-title">
-<div class="small-title">TRUST & PROFESSIONALISM</div>
-<h2>Trusted Partners & Networks</h2>
-</div>
-
-<div class="trust-grid">
-
-<div class="trust-card">
-<div class="trust-icon">🎓</div>
-Education<br>Networks
-</div>
-
-<div class="trust-card">
-<div class="trust-icon">🌍</div>
-Global<br>Universities
-</div>
-
-<div class="trust-card">
-<div class="trust-icon">🏦</div>
-Financial<br>Institutions
-</div>
-
-<div class="trust-card">
-<div class="trust-icon">📋</div>
-Documentation<br>Support
-</div>
+    <div class="stat">
+        <h2>24/7</h2>
+        <p>Support</p>
+    </div>
 
 </div>
-</div>
-</section>
 
+
+<!-- SERVICES -->
 <section id="services">
-<div class="container">
 
-<div class="section-title">
-<div class="small-title">OUR SPECIALIZED SERVICES</div>
-<h2>Complete Support For Your Global Journey</h2>
-<p>
-From financial documentation to study abroad guidance,
-we help you prepare your important documents.
-</p>
-</div>
+    <div class="container">
 
-<div class="services-grid">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>
+                Complete support for students planning their
+                international education journey.
+            </p>
+        </div>
 
-<div class="service-card">
-<div class="service-icon">🎓</div>
-<h3>Student Visa Support</h3>
-<p>Guidance and support for preparing financial documents related to student visa applications.</p>
-<a href="#contact" class="learn">Learn More →</a>
-</div>
 
-<div class="service-card">
-<div class="service-icon">🏦</div>
-<h3>Bank Statement</h3>
-<p>Assistance with bank statement requirements and financial documentation for study abroad.</p>
-<a href="#contact" class="learn">Learn More →</a>
-</div>
+        <div class="services">
 
-<div class="service-card">
-<div class="service-icon">📊</div>
-<h3>FDR & Fund Documentation</h3>
-<p>Support with FDR, fund documentation and financial solvency preparation.</p>
-<a href="#contact" class="learn">Learn More →</a>
-</div>
+            <div class="service">
+                <div class="icon">🎓</div>
+                <h3>Student Visa Support</h3>
+                <p>
+                    Guidance and documentation support for
+                    student visa applications.
+                </p>
+            </div>
 
-<div class="service-card">
-<div class="service-icon">🌍</div>
-<h3>Study Abroad Guidance</h3>
-<p>General guidance for students exploring higher education opportunities abroad.</p>
-<a href="#contact" class="learn">Learn More →</a>
-</div>
 
-<div class="service-card">
-<div class="service-icon">📄</div>
-<h3>Documentation Support</h3>
-<p>Professional assistance with preparing and organizing important application documents.</p>
-<a href="#contact" class="learn">Learn More →</a>
-</div>
+            <div class="service">
+                <div class="icon">🏦</div>
+                <h3>Bank Statement</h3>
+                <p>
+                    Support with financial documentation
+                    required for study abroad applications.
+                </p>
+            </div>
 
-<div class="service-card">
-<div class="service-icon">🤝</div>
-<h3>Personal Assistance</h3>
-<p>Personal support throughout your study abroad documentation journey.</p>
-<a href="#contact" class="learn">Learn More →</a>
-</div>
 
-<div class="service-card">
-<div class="service-icon">📚</div>
-<h3>IELTS / PTE Guidance</h3>
-<p>General guidance and information for students preparing for English language requirements.</p>
-<a href="#contact" class="learn">Learn More →</a>
-</div>
+            <div class="service">
+                <div class="icon">📄</div>
+                <h3>FDR & Fund Documentation</h3>
+                <p>
+                    Assistance with FDR and required
+                    financial fund documentation.
+                </p>
+            </div>
 
-<div class="service-card">
-<div class="service-icon">🛂</div>
-<h3>Visa Processing Support</h3>
-<p>Guidance for organizing documents and preparing for student visa application processes.</p>
-<a href="#contact" class="learn">Learn More →</a>
-</div>
 
-</div>
-</div>
+            <div class="service">
+                <div class="icon">🌍</div>
+                <h3>Study Abroad Guidance</h3>
+                <p>
+                    Guidance for students exploring
+                    international study opportunities.
+                </p>
+            </div>
+
+
+            <div class="service">
+                <div class="icon">📑</div>
+                <h3>Documentation Support</h3>
+                <p>
+                    Help organizing important documents
+                    for your application.
+                </p>
+            </div>
+
+
+            <div class="service">
+                <div class="icon">🤝</div>
+                <h3>Personal Assistance</h3>
+                <p>
+                    Personal support throughout your
+                    application preparation process.
+                </p>
+            </div>
+
+
+            <div class="service">
+                <div class="icon">🗣️</div>
+                <h3>IELTS / PTE Guidance</h3>
+                <p>
+                    Guidance for English language preparation
+                    and study abroad planning.
+                </p>
+            </div>
+
+
+            <div class="service">
+                <div class="icon">✈️</div>
+                <h3>Visa Processing Support</h3>
+                <p>
+                    Step-by-step assistance with the
+                    visa preparation process.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="process" id="process">
-<div class="container">
 
-<div class="section-title">
-<div class="small-title">HOW IT WORKS</div>
-<h2>Simple & Easy Process</h2>
-<p>Get professional support in three simple steps.</p>
-</div>
+<!-- ABOUT -->
+<section class="about" id="about">
 
-<div class="process-grid">
+    <div class="container">
 
-<div class="process-card">
-<div class="number">1</div>
-<h3>Contact Us</h3>
-<p>Contact HiYa through WhatsApp or phone and tell us about your requirements.</p>
-</div>
+        <div class="about-grid">
 
-<div class="process-card">
-<div class="number">2</div>
-<h3>Document Review</h3>
-<p>Our team reviews your requirements and guides you about the necessary documents.</p>
-</div>
+            <div>
 
-<div class="process-card">
-<div class="number">3</div>
-<h3>Get Support</h3>
-<p>Receive guidance and assistance for preparing your study abroad documentation.</p>
-</div>
+                <div class="section-title" style="text-align:left;margin-bottom:25px;">
+                    <h2>Why HiYa?</h2>
+                    <p>
+                        We focus on making the study abroad
+                        preparation process simple and organized.
+                    </p>
+                </div>
 
-</div>
-</div>
+                <ul class="check-list">
+                    <li>Professional student support</li>
+                    <li>Financial documentation guidance</li>
+                    <li>Personalized assistance</li>
+                    <li>Clear and organized process</li>
+                    <li>Support throughout the preparation</li>
+                </ul>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h3>
+                    Build Your Future Abroad
+                </h3>
+
+                <p>
+                    Planning to study abroad can involve many
+                    documents and financial requirements.
+                    HiYa Education Support and Finance helps
+                    students understand and prepare the
+                    necessary documentation.
+                </p>
+
+                <br>
+
+                <p>
+                    Our goal is to provide simple,
+                    professional and student-focused support.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section id="about">
-<div class="container about-grid">
 
-<div class="about-box">
-<div class="small-title">ABOUT HIYA</div>
-<h2>Your Study Abroad Support Partner</h2>
+<!-- PROCESS -->
+<section>
 
-<p>
-HiYa Education Support and Finance provides support for students
-preparing for international education and student visa documentation.
-</p>
+    <div class="container">
 
-<p>
-Our focus is to help students understand financial documentation,
-organize important papers and prepare for their study abroad journey.
-</p>
+        <div class="section-title">
+            <h2>How It Works</h2>
+            <p>
+                Our simple three-step process.
+            </p>
+        </div>
 
-<div class="check">✓ Student Visa Documentation Support</div>
-<div class="check">✓ Bank Statement Guidance</div>
-<div class="check">✓ FDR & Fund Documentation</div>
-<div class="check">✓ Study Abroad Guidance</div>
-</div>
 
-<div class="about-box">
-<div class="contact-card">
+        <div class="process">
 
-<h3>Why Choose HiYa?</h3>
+            <div class="process-card">
+                <div class="number">01</div>
+                <h3>Contact Us</h3>
+                <p>
+                    Tell us about your study abroad
+                    requirements and plans.
+                </p>
+            </div>
 
-<p>✓ Professional documentation support</p>
-<p>✓ Student-focused assistance</p>
-<p>✓ Clear process</p>
-<p>✓ Fast communication</p>
-<p>✓ Support for international study planning</p>
 
-</div>
-</div>
+            <div class="process-card">
+                <div class="number">02</div>
+                <h3>Get Guidance</h3>
+                <p>
+                    Understand the documents and
+                    preparation required for your case.
+                </p>
+            </div>
 
-</div>
+
+            <div class="process-card">
+                <div class="number">03</div>
+                <h3>Start Your Journey</h3>
+                <p>
+                    Prepare your application with
+                    organized professional support.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
+
+<!-- COUNTRIES -->
+<section style="background:#eef7ff;">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Study Destinations</h2>
+            <p>
+                Students explore study opportunities
+                across different countries.
+            </p>
+        </div>
+
+
+        <div class="countries">
+
+            <div class="country">🇮🇹 Italy</div>
+            <div class="country">🇷🇴 Romania</div>
+            <div class="country">🇭🇺 Hungary</div>
+            <div class="country">🇦🇺 Australia</div>
+            <div class="country">🇨🇾 Cyprus</div>
+            <div class="country">🇲🇹 Malta</div>
+            <div class="country">🇬🇧 UK</div>
+            <div class="country">🇨🇦 Canada</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
 <section class="cta">
-<div class="container">
 
-<h2>Ready to Start Your Global Journey?</h2>
+    <h2>Ready To Start Your Journey?</h2>
 
-<p>
-Get in touch with HiYa Education Support and Finance
-for student visa and study abroad documentation guidance.
-</p>
+    <p>
+        Contact HiYa Education Support and Finance
+        for student visa and study abroad support.
+    </p>
 
-<div class="buttons" style="justify-content:center;">
+    <a href="https://wa.me/8801998879371"
+       target="_blank"
+       class="btn btn-primary">
+        💬 WhatsApp Us
+    </a>
 
-<a href="https://wa.me/8801998879371" target="_blank" class="btn btn-gold">
-WhatsApp Us
-</a>
-
-<a href="tel:+8801998879371" class="btn btn-blue">
-Call 01998-879371
-</a>
-
-</div>
-</div>
 </section>
 
+
+<!-- CONTACT -->
 <section class="contact" id="contact">
-<div class="container">
 
-<div class="section-title">
-<div class="small-title">GET IN TOUCH</div>
-<h2>Contact HiYa</h2>
-<p>Have questions? Contact us directly.</p>
-</div>
+    <div class="container">
 
-<div class="contact-grid">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>
+                Get in touch with HiYa Education Support and Finance.
+            </p>
+        </div>
 
-<div class="contact-card">
 
-<h3>Contact Information</h3>
+        <div class="contact-grid">
 
-<div class="contact-item">
-<strong>📞 Phone:</strong><br>
-<a href="tel:+8801998879371">01998-879371</a>
-</div>
+            <div class="contact-card">
+                <div class="big-icon">📱</div>
+                <h3>Phone</h3>
+                <p>
+                    <a href="tel:+8801998879371">
+                        01998-879371
+                    </a>
+                </p>
+            </div>
 
-<div class="contact-item">
-<strong>💬 WhatsApp:</strong><br>
-<a href="https://wa.me/8801998879371" target="_blank">Chat on WhatsApp</a>
-</div>
 
-<div class="contact-item">
-<strong>📘 Facebook:</strong><br>
-<a href="https://www.facebook.com/hiyaedu21/" target="_blank">
-HiYa Education Support and Finance
-</a>
-</div>
+            <div class="contact-card">
+                <div class="big-icon">💬</div>
+                <h3>WhatsApp</h3>
+                <p>
+                    <a href="https://wa.me/8801998879371"
+                       target="_blank">
+                        Chat With Us
+                    </a>
+                </p>
+            </div>
 
-</div>
 
-<div class="contact-card">
+            <div class="contact-card">
+                <div class="big-icon">📘</div>
+                <h3>Facebook</h3>
+                <p>
+                    <a href="https://www.facebook.com/hiyaedu21/"
+                       target="_blank">
+                        HiYa Education Support and Finance
+                    </a>
+                </p>
+            </div>
 
-<h3>Start Your Consultation</h3>
+        </div>
 
-<p style="color:#667785;margin-bottom:20px;">
-For student visa, bank statement, FDR, fund documentation
-and study abroad support, contact us directly.
-</p>
+    </div>
 
-<a
-href="https://wa.me/8801998879371?text=Hello%20HiYa%2C%20I%20need%20information%20about%20your%20student%20visa%20support."
-target="_blank"
-class="btn btn-blue">
-Message on WhatsApp →
-</a>
-
-</div>
-
-</div>
-</div>
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-<div class="container">
 
-<div class="footer-grid">
+    <div class="footer-grid">
 
-<div>
+        <div>
 
-<div class="logo-area">
+            <div class="footer-logo">
 
-<img src="logo.png" alt="HiYa Logo">
+                <img src="logo.png"
+                     alt="HiYa Education Support and Finance">
 
-<div class="logo-text">
-<h2 style="color:white;">HiYa</h2>
-<p style="color:#c5d4df;">Education Support and Finance</p>
-</div>
+                <div>
+                    <strong>HiYa Education</strong><br>
+                    <small>Support and Finance</small>
+                </div>
 
-</div>
+            </div>
 
-<p style="margin-top:15px;">
-Professional support for student visa preparation,
-financial documentation and study abroad guidance.
-</p>
+            <p>
+                Professional student visa, financial
+                documentation and study abroad support.
+            </p>
 
-</div>
+        </div>
 
-<div>
-<h3>Quick Links</h3>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#process">Process</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
 
-<div>
-<h3>Contact</h3>
+        <div>
 
-<a href="tel:+8801998879371">📞 01998-879371</a>
+            <h3>Quick Links</h3>
 
-<a href="https://wa.me/8801998879371" target="_blank">
-💬 WhatsApp
-</a>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
 
-<a href="https://www.facebook.com/hiyaedu21/" target="_blank">
-📘 Facebook Page
-</a>
+        </div>
 
-</div>
 
-</div>
+        <div>
 
-<div class="copyright">
-© 2026 HiYa Education Support and Finance. All Rights Reserved.
-</div>
+            <h3>Contact</h3>
 
-</div>
+            <a href="tel:+8801998879371">
+                📱 01998-879371
+            </a>
+
+            <a href="https://wa.me/8801998879371"
+               target="_blank">
+                💬 WhatsApp
+            </a>
+
+            <a href="https://www.facebook.com/hiyaedu21/"
+               target="_blank">
+                📘 Facebook Page
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 HiYa Education Support and Finance. All Rights Reserved.
+    </div>
+
 </footer>
 
-<a
-href="https://wa.me/8801998879371"
-target="_blank"
-class="whatsapp"
-aria-label="WhatsApp">
-💬
+
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp"
+   href="https://wa.me/8801998879371"
+   target="_blank"
+   aria-label="WhatsApp">
+    💬
 </a>
 
 </body>
